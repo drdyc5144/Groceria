@@ -1,4 +1,4 @@
-import "./Card.css";
+import "../Style/Card.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -28,7 +28,7 @@ const Card = () => {
       const res = await axios.get("https://api.escuelajs.co/api/v1/products");
       setProducts(res?.data);
       setIsLoading(false);
-      // console.log("server response", res);
+      console.log("server response", res);
     } catch (error) {
       console.log("here am i Dr error", error);
     }
@@ -47,7 +47,7 @@ const Card = () => {
         ) : (
           products?.map((item) => (
             <div className="cards" key={item?.id}>
-              <img src={item?.images?.[1]} alt={item?.title} />
+              <img src={item?.images?.[0]} alt={item?.title} />
               <h2>{item?.title}</h2>
               <h3>${item?.price}</h3>
               <p>{item?.description}</p>

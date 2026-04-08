@@ -1,4 +1,4 @@
-import "./Header.css";
+import "../Style/Header.css";
 import logo from "../assets/Group 2.png";
 import Button from "./Button";
 import { MdOutlineShoppingCart } from "react-icons/md";

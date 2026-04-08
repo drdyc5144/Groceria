@@ -1,4 +1,4 @@
-import "./Section.css";
+import "../Style/Section.css";
 import Hero from "../assets/hero1.png";
 import { GoDot } from "react-icons/go";
 import { GoDotFill } from "react-icons/go";
