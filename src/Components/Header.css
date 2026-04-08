@@ -1,0 +1,108 @@
+.HeaderContainer {
+  width: 100%;
+  height: 13vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f6f5f5;
+}
+
+.HeaderHolder {
+  width: 90%;
+  height: 100%;
+  display: flex;
+}
+.logo {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 70px;
+
+  img {
+    width: 170px;
+    height: 50px;
+  }
+  p {
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 100%;
+    letter-spacing: 0%;
+  }
+}
+
+.menu {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 23px;
+
+  .store {
+    width: 114px;
+    height: 50px;
+    gap: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #02b928;
+    /* padding: 10px 12px; */
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 0%;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+  }
+}
+.Btnholder {
+  width: 65%;
+  height: 50px;
+  background-color: #f27318;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  border-radius: 10px 10px 10px 10px;
+  color: #ffffff;
+
+  input {
+    width: 330px;
+    padding: 17px;
+    border: none;
+    font-size: 16px;
+    border-radius: 10px;
+    border-radius: 10px 0px 0px 10px;
+    outline: none;
+  }
+  span {
+    margin-left: 20px;
+  }
+}
+.buttonHolder {
+  width: 25%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  gap: 20px;
+
+  button {
+    width: 130px;
+    height: 55px;
+    gap: 10px;
+    border-radius: 25px;
+    padding: 10px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    background-color: #02b928;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  .Register {
+    background-color: #f27318;
+  }
+}
