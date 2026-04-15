@@ -4,37 +4,15 @@ import "../Style/Cart.css";
 import yam from "../assets/yam.jpg";
 import { FiMinus } from "react-icons/fi";
 import { FiPlus } from "react-icons/fi";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
-  const [quantity, setQuantity] = useState(1);
-  const unitPrice = 10000;
-  const [totalPrice, setTotalPrice] = useState(unitPrice);
-
-  const increaseQuantity = () => {
-    const newQuantity = quantity + 1;
-    setQuantity(newQuantity);
-    setTotalPrice(unitPrice * newQuantity);
-  };
-
-  const decreaseQuantity = () => {
-    if (quantity > 1) {
-      const newQuantity = quantity - 1;
-      setQuantity(newQuantity);
-      setTotalPrice(unitPrice * newQuantity);
-    }
-  };
-
   return (
     <>
       <Header />
       <main className="AddToCartContainer">
         <section className="CartContainerLeft">
           <div className="CartTop">
-            <h2>
-              Your Cart ({quantity} item{quantity !== 1 ? "s" : ""})
-            </h2>
+            <h2>Your Cart (1)</h2>
             <nav className="CartNav">
               <ul>
                 <li>Product</li>
@@ -60,19 +38,19 @@ const Cart = () => {
                 <div className="bottomleft">
                   <p>Quantity</p>
                   <div className="btnholder">
-                    <button onClick={decreaseQuantity}>
+                    <button>
                       <FiMinus />
                     </button>
                     <button>{quantity}</button>
-                    <button onClick={increaseQuantity}>
+                    <button>
                       <FiPlus />
                     </button>
                   </div>
                   <Button text="Add more items" className="addmore" />
                 </div>
                 <div className="bottomright">
-                  <h3>Unit Price: ₦{unitPrice.toLocaleString()}</h3>
-                  <h3>Total: ₦{totalPrice.toLocaleString()}</h3>
+                  <h3>Unit Price: ₦5,000</h3>
+                  <h3>Total: ₦ 9,000</h3>
                   <button className="remove">Remove</button>
                 </div>
               </div>
@@ -83,7 +61,7 @@ const Cart = () => {
           <div className="RightHolder">
             <div className="firsttext">
               <h3>
-                Subtotal: <span>₦{totalPrice.toLocaleString()}</span>
+                Subtotal: <span>10,000</span>
               </h3>
             </div>
             <div className="secondtext">
