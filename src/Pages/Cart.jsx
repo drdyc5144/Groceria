@@ -41,7 +41,7 @@ const Cart = () => {
                     <button>
                       <FiMinus />
                     </button>
-                    <button>{quantity}</button>
+                    <button>0</button>
                     <button>
                       <FiPlus />
                     </button>
@@ -49,8 +49,8 @@ const Cart = () => {
                   <Button text="Add more items" className="addmore" />
                 </div>
                 <div className="bottomright">
-                  <h3>Unit Price: ₦5,000</h3>
-                  <h3>Total: ₦ 9,000</h3>
+                  <h3>Unit Price: ₦10,000</h3>
+                  <h3>Total: ₦ 10,000</h3>
                   <button className="remove">Remove</button>
                 </div>
               </div>
