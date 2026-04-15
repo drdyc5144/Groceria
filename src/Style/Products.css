@@ -1,0 +1,103 @@
+.ProductContainer {
+  width: 100%;
+  height: 100vh;
+  min-height: max-content;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+@media (max-width: 450px) {
+  .ProductContainer {
+    height: auto;
+    padding: 40px 0;
+  }
+}
+
+.ProductHolder {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: max-content;
+  gap: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (max-width: 450px) {
+  .ProductHolder {
+    width: 95%;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+}
+
+.cards {
+  width: 30%;
+  min-height: 90%;
+  max-height: max-content;
+  background-color: white;
+  color: black;
+  padding: 20px;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  cursor: pointer;
+
+
+  img {
+    width: 100%;
+    height: 55%;
+    object-fit: cover;
+  }
+
+  h3 {
+    color: red;
+  }
+
+  .add-btn {
+    padding: 12px;
+    width: 350px;
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 450px) {
+  .cards {
+    width: 100%;
+    min-height: auto;
+    padding: 15px;
+    gap: 15px;
+
+    img {
+      height: auto;
+      max-height: 250px;
+    }
+
+    .add-btn {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+    }
+  }
+}
+
+.Loading {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: red;
+}
+
+@media (max-width: 450px) {
+  .Loading {
+    font-size: 14px;
+    padding: 40px 0;
+  }
+}

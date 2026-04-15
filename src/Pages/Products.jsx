@@ -1,14 +1,15 @@
-import "../Style/Card.css";
+import "../Style/Products.css";
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 import { useNavigate } from "react-router-dom";
+// import Button from "./Button";
 
-const Card = () => {
-  const nav = useNavigate();
+const Products = () => {
+     const nav = useNavigate();
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  // const fetchProduct = async () => {
+    // const fetchProduct = async () => {
   //   try {
   //     const response = await fetch("https://api.escuelajs.co/api/v1/products");
   //     const newdata = await response.json();
@@ -30,7 +31,7 @@ const Card = () => {
       setIsLoading(false);
       console.log("server response", res);
     } catch (error) {
-      console.log("here am i Dr error", error);
+      console.log("error", error);
     }
   };
   useEffect(() => {
@@ -38,25 +39,34 @@ const Card = () => {
   }, []);
 
   return (
-    <main className="CardContainer">
-      <section className="CardsHolder">
+    <main className="ProductContainer">
+      <section className="ProductHolder">
         {isLoading ? (
           <div className="Loading">
             <h1>Loading...</h1>
           </div>
         ) : (
           products?.map((item) => (
-            <div className="cards" key={item?.id}>
+            <div
+              className="cards"
+              key={item?.id}
+              onClick={() => nav(`detailspage/${item.id}`)}
+            >
               <img src={item?.images?.[0]} alt={item?.title} />
               <h2>{item?.title}</h2>
               <h3>${item?.price}</h3>
               <p>{item?.description}</p>
+              {/* <Button text="Add to cart" className="add-btn" /> */}
             </div>
           ))
         )}
       </section>
     </main>
+  
   );
 };
 
-export default Card;
+export default Products;
+
+
+

@@ -9,9 +9,9 @@ const Header = () => {
   return (
     <main className="HeaderContainer">
       <section className="HeaderHolder">
-        <div className="logo">
+        <div className="logo" onClick={() => nav("/")}>
           <img src={logo} alt="" />
-          <p>Home</p>
+          <p onClick={() => nav("/")}>Home</p>
         </div>
         <div className="menu">
           <Button
@@ -26,7 +26,8 @@ const Header = () => {
         </div>
         <div className="buttonHolder">
           <MdOutlineShoppingCart
-            style={{ fontSize: "40px", color: "#02B928" }}
+            onClick={() => nav("/cart")}
+            style={{ fontSize: "40px", color: "#02B928", cursor: "pointer" }}
           />
           <Button text="Register" className="Register" />
           <Button text="Login" />

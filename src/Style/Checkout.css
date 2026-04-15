@@ -1,0 +1,428 @@
+.CheckoutContainer {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: 40px 0;
+}
+
+.CheckoutWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Back Button Styles */
+.BackButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  padding: 10px 0;
+  transition: all 0.3s ease;
+  color: #555;
+}
+
+.BackButton:hover {
+  color: #02b928;
+  transform: translateX(-5px);
+}
+
+.BackIcon {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.BackButton span {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.CheckoutTitle {
+  font-size: 32px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.CheckoutGrid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 30px;
+}
+
+.CheckoutLeft {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.FormSection {
+  margin-bottom: 35px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 25px;
+}
+
+.FormSection:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.SectionTitle {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.StepNumber {
+  width: 30px;
+  height: 30px;
+  background-color: #02b928;
+  color: white;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.FormRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.FormGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.FormGroup label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+}
+
+.FormGroup input {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.FormGroup input:focus {
+  outline: none;
+  border-color: #02b928;
+  box-shadow: 0 0 0 3px rgba(2, 185, 40, 0.1);
+}
+
+.PaymentMethods {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.PaymentOption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: white;
+}
+
+.PaymentOption:hover {
+  border-color: #02b928;
+}
+
+.PaymentOption.active {
+  border-color: #02b928;
+  background-color: #f0fff4;
+}
+
+.PaymentOption input {
+  display: none;
+}
+
+.PaymentOption svg {
+  font-size: 22px;
+  color: #555;
+}
+
+.PaymentOption.active svg {
+  color: #02b928;
+}
+
+.PaymentOption span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.CardDetails {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+.BankDetails {
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+.BankInfo h4 {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #02b928;
+}
+
+.BankAccount {
+  background-color: white;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.BankAccount p {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #555;
+}
+
+.BankAccount p strong {
+  color: #333;
+  width: 120px;
+  display: inline-block;
+}
+
+.TransferInstruction {
+  background-color: #fff3e0;
+  padding: 12px;
+  border-radius: 8px;
+  border-left: 3px solid #ff9800;
+}
+
+.TransferInstruction p {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.TransferInstruction p:last-child {
+  margin-bottom: 0;
+}
+
+.PlaceOrderBtn {
+  width: 100%;
+  padding: 16px;
+  background-color: #02b928;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.PlaceOrderBtn:hover {
+  background-color: #019e22;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(2, 185, 40, 0.3);
+}
+
+.CheckoutRight {
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+}
+
+.OrderSummary {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.OrderSummary h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #02b928;
+}
+
+.OrderItems {
+  margin-bottom: 20px;
+}
+
+.OrderItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.ItemInfo {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.ItemName {
+  font-size: 14px;
+  color: #333;
+}
+
+.ItemQuantity {
+  font-size: 12px;
+  color: #888;
+  background-color: #f0f0f0;
+  padding: 2px 6px;
+  border-radius: 12px;
+}
+
+.ItemPrice {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+.PriceBreakdown {
+  margin: 20px 0;
+}
+
+.PriceRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.PriceRow.Total {
+  border-top: 2px solid #eee;
+  margin-top: 10px;
+  padding-top: 15px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+}
+
+.PriceRow.Total span:last-child {
+  color: #02b928;
+}
+
+.SecureCheckout {
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.SecureCheckout p {
+  font-size: 12px;
+  color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .CheckoutGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .CheckoutRight {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .CheckoutContainer {
+    padding: 20px 0;
+  }
+
+  .CheckoutTitle {
+    font-size: 24px;
+  }
+
+  .CheckoutLeft {
+    padding: 20px;
+  }
+
+  .FormRow {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .PaymentMethods {
+    grid-template-columns: 1fr;
+  }
+
+  .BackButton {
+    margin-bottom: 15px;
+  }
+
+  .BackButton span {
+    font-size: 14px;
+  }
+
+  .BackIcon {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .CheckoutWrapper {
+    padding: 0 15px;
+  }
+
+  .OrderSummary {
+    padding: 20px;
+  }
+
+  .PlaceOrderBtn {
+    padding: 14px;
+    font-size: 14px;
+  }
+
+  .BankAccount p strong {
+    width: 100%;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .BackButton {
+    margin-bottom: 10px;
+  }
+
+  .BackButton span {
+    font-size: 12px;
+  }
+
+  .BackIcon {
+    font-size: 16px;
+  }
+}
