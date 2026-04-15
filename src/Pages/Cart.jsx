@@ -25,7 +25,6 @@ const Cart = () => {
       setTotalPrice(unitPrice * newQuantity);
     }
   };
-  const nav = useNavigate();
 
   return (
     <>
@@ -94,11 +93,7 @@ const Cart = () => {
                 <span>Groceria’s Return Policy</span>
               </p>
             </div>
-            <Button
-              text="proceed to checkout"
-              className="checkout"
-              onClick={() => nav("/checkout")}
-            />
+            <Button text="proceed to checkout" className="checkout" />
           </div>
         </section>
       </main>
