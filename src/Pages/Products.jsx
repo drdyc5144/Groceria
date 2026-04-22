@@ -54,7 +54,7 @@ const Products = () => {
             <div
               className="cards"
               key={item?.id}
-              onClick={() => nav(`detailspage/${item.id}`)}
+              // onClick={() => nav(`detailspage/${item.id}`)}
             >
               <img src={item?.images?.[0]} alt={item?.title} />
               <h2>{item?.title}</h2>

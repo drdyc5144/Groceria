@@ -8,6 +8,7 @@ import { CartContext } from "../Context/CartContext";
 
 const Cart = () => {
   const { state, dispatch } = useContext(CartContext);
+  console.log("this is my cart: ", state);
 
   if (!state || state.length === 0) {
     return (
@@ -64,9 +65,17 @@ const Cart = () => {
                         <FiMinus />
                       </button>
 
-                      <button>{item.quantity || 1}</button>
+                      <button>{item.quantity || 0}</button>
 
-                      <button>
+                      <button
+                        onClick={() => {
+                          console.log(item.id);
+                          dispatch({
+                            type: "INCREASE_QUANTITY",
+                            payload: item.id,
+                          });
+                        }}
+                      >
                         <FiPlus />
                       </button>
                     </div>

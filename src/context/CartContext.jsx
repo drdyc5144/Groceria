@@ -10,21 +10,30 @@ const cartReducer = (state, action) => {
       const existingInCart = state.findIndex(
         (item) => item.id === action.payload.id,
       );
-      if (existingInCart === -1) {
-        const newItem = { ...action.payload, quantity: 1 };
-        return [...state, newItem];
-      } else {
-        const updatedCart = state[existingInCart];
-        updatedCart.quantity += 1;
 
-        return [...state];
+      if (existingInCart === -1) {
+        return [...state, { ...action.payload, quantity: 1 }];
+      } else {
+        return state.map((item) =>
+          item.id === action.payload.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item,
+        );
       }
     }
 
     case "REMOVE_FROM_CART": {
-      const updatedCart = state.filter((item) => item.id !== action.payload);
-      return updatedCart;
+      return state.filter((item) => item.id !== action.payload);
     }
+
+    case "INCREASE_QUANTITY": {
+      return state.map((item) => {
+        return item.id === action.payload
+          ? { ...item, quantity: item.quantity + 1 }
+          : item;
+      });
+    }
+
     default:
       return state;
   }
@@ -32,6 +41,7 @@ const cartReducer = (state, action) => {
 
 export const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(cartReducer, initialCartState);
+  console.log(state);
 
   return (
     <CartContext.Provider value={{ state, dispatch }}>
