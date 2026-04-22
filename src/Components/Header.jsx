@@ -1,11 +1,15 @@
+import { useContext } from "react";
 import "../Style/Header.css";
 import logo from "../assets/Group 2.png";
 import Button from "./Button";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import { CartContext } from "../Context/CartContext";
 
 const Header = () => {
   const nav = useNavigate();
+  const { state } = useContext(CartContext);
+
   return (
     <main className="HeaderContainer">
       <section className="HeaderHolder">
@@ -15,7 +19,7 @@ const Header = () => {
         </div>
         <div className="menu">
           <Button
-            onClick={() => nav("/store")}
+            onClick={() => nav("/products")}
             className="store"
             text="Stores"
           />
@@ -25,10 +29,15 @@ const Header = () => {
           </div>
         </div>
         <div className="buttonHolder">
-          <MdOutlineShoppingCart
-            onClick={() => nav("/cart")}
-            style={{ fontSize: "40px", color: "#02B928", cursor: "pointer" }}
-          />
+          <div className="cart-wrapper">
+            <MdOutlineShoppingCart
+              onClick={() => nav("/cart")}
+              className="cart-icon"
+            />
+            <span className={`cart-count ${state.length === 0 ? "empty" : ""}`}>
+              {state.length}
+            </span>
+          </div>
           <Button text="Register" className="Register" />
           <Button text="Login" />
         </div>

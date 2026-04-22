@@ -5,6 +5,9 @@
   justify-content: center;
   align-items: center;
   background-color: #f6f5f5;
+  position: sticky;
+  top: 0;
+  right: 0;
 }
 
 .HeaderHolder {
@@ -66,6 +69,7 @@
   align-items: center;
   border-radius: 10px 10px 10px 10px;
   color: #ffffff;
+  position: relative;
 
   input {
     width: 330px;
@@ -87,6 +91,7 @@
   align-items: center;
   display: flex;
   gap: 20px;
+  position: relative;
 
   button {
     width: 130px;
@@ -107,4 +112,39 @@
   .Register {
     background-color: #f27318;
   }
+}
+.cart-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.cart-icon {
+  font-size: 40px;
+  color: #02b928;
+  cursor: pointer;
+  display: block;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -12px;
+  background-color: #ff4444;
+  color: white;
+  border-radius: 50%;
+  min-width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  padding: 0 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.cart-count.empty {
+  background-color: #999;
 }

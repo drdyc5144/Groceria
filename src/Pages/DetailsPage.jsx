@@ -7,8 +7,12 @@ import Header from "../Components/Header";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { CartContext } from "../Context/CartContext";
+import { useContext } from "react";
 
 const DetailsPage = () => {
+  const { dispatch } = useContext(CartContext);
+
   const [isLoading, setIsLoading] = useState(false);
   const [singleProduct, setSingleProduct] = useState({});
 
@@ -90,7 +94,14 @@ const DetailsPage = () => {
                     <option value="03">03</option>
                     <option value="04">04</option>
                   </select>
-                  <button className="add">ADD TO CART</button>
+                  <button
+                    className="add"
+                    onClick={() =>
+                      dispatch({ type: "ADD_TO_CART", payload: singleProduct })
+                    }
+                  >
+                    ADD TO CART
+                  </button>
                 </div>
               </div>
               <div className="third">

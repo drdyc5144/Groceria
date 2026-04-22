@@ -1,15 +1,19 @@
 import "../Style/Products.css";
 import axios from "axios";
-import { useState, useEffect, use } from "react";
+import Button from "../Components/Button";
+import { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-// import Button from "./Button";
+import { CartContext } from "../Context/CartContext";
 
 const Products = () => {
-     const nav = useNavigate();
+  const nav = useNavigate();
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-    // const fetchProduct = async () => {
+  const { dispatch } = useContext(CartContext);
+  // console.log(useContext(CartContext));
+
+  // const fetchProduct = async () => {
   //   try {
   //     const response = await fetch("https://api.escuelajs.co/api/v1/products");
   //     const newdata = await response.json();
@@ -56,17 +60,17 @@ const Products = () => {
               <h2>{item?.title}</h2>
               <h3>${item?.price}</h3>
               <p>{item?.description}</p>
-              {/* <Button text="Add to cart" className="add-btn" /> */}
+              <Button
+                text="Add to cart"
+                className="add-btn"
+                onClick={() => dispatch({ type: "ADD_TO_CART", payload: item })}
+              />
             </div>
           ))
         )}
       </section>
     </main>
-  
   );
 };
 
 export default Products;
-
-
-
