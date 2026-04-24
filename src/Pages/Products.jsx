@@ -56,7 +56,11 @@ const Products = () => {
               key={item?.id}
               // onClick={() => nav(`detailspage/${item.id}`)}
             >
-              <img src={item?.images?.[0]} alt={item?.title} />
+              <img
+                src={item?.images?.[0]}
+                alt={item?.title}
+                onClick={() => nav(`detailspage/${item.id}`)}
+              />
               <h2>{item?.title}</h2>
               <h3>${item?.price}</h3>
               <p>{item?.description}</p>

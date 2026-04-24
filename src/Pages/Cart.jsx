@@ -8,7 +8,6 @@ import { CartContext } from "../Context/CartContext";
 
 const Cart = () => {
   const { state, dispatch } = useContext(CartContext);
-  console.log("this is my cart: ", state);
 
   if (!state || state.length === 0) {
     return (
@@ -61,7 +60,14 @@ const Cart = () => {
                     <p>Quantity</p>
 
                     <div className="btnholder">
-                      <button>
+                      <button
+                        onClick={() => {
+                          dispatch({
+                            type: "DECREASE_QUANTITY",
+                            payload: item.id,
+                          });
+                        }}
+                      >
                         <FiMinus />
                       </button>
 

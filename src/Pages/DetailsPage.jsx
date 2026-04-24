@@ -25,8 +25,7 @@ const DetailsPage = () => {
         `https://api.escuelajs.co/api/v1/products/${id}`,
       );
       setSingleProduct(res.data);
-      localStorage.setItem("products", JSON.stringify(res.data));
-      console.log(res);
+
       setIsLoading(false);
     } catch (err) {
       console.log(err);
